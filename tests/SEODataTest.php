@@ -1,10 +1,12 @@
 <?php
 
-namespace Juampi92\TestSEO\Tests;
+declare(strict_types=1);
 
-use Juampi92\TestSEO\Parser\HTMLParser;
-use Juampi92\TestSEO\SEOData;
+namespace Raiolanetworks\PluginSEOTest\Tests;
+
 use PHPUnit\Framework\TestCase;
+use Raiolanetworks\PluginSEOTest\Parser\HTMLParser;
+use Raiolanetworks\PluginSEOTest\SEOData;
 
 class SEODataTest extends TestCase
 {
@@ -21,7 +23,7 @@ EMPTY_HTML;
 
         // Act
         $parser = new HTMLParser($page);
-        $seo = new SEOData($parser);
+        $seo    = new SEOData($parser);
 
         // Assert
         $this->assertNull($seo->title());
@@ -43,11 +45,11 @@ EMPTY_HTML;
     public function test_it_parses_html_into_instance(): void
     {
         // Arrange
-        $page = file_get_contents(__DIR__.'/stubs/test.html');
+        $page = file_get_contents(__DIR__ . '/stubs/test.html');
 
         // Act
         $parser = new HTMLParser($page);
-        $seo = new SEOData($parser);
+        $seo    = new SEOData($parser);
 
         // Assert
         $this->assertEquals('This is my test title.', $seo->title());
@@ -69,6 +71,6 @@ EMPTY_HTML;
         $this->assertEquals(['Header example'], $seo->h1s());
         $this->assertEquals(['Header 2 example', 'Header 2 example 2'], $seo->h2s());
         $this->assertEquals('utf-8', $seo->charset());
-//        $this->assertEquals('', $seo->ampHtmlLink());
+        //        $this->assertEquals('', $seo->ampHtmlLink());
     }
 }

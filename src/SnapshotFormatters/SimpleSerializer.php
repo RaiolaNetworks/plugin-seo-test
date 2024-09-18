@@ -1,33 +1,35 @@
 <?php
 
-namespace Juampi92\TestSEO\SnapshotFormatters;
+declare(strict_types=1);
 
-use Juampi92\TestSEO\SEOData;
-use Juampi92\TestSEO\Tags\TagCollection;
+namespace Raiolanetworks\PluginSEOTest\SnapshotFormatters;
+
+use Raiolanetworks\PluginSEOTest\SEOData;
+use Raiolanetworks\PluginSEOTest\Tags\TagCollection;
 
 class SimpleSerializer implements SnapshotSerializer
 {
     public function toArray(SEOData $data): array
     {
         return [
-            'title' => $data->title(),
-            'description' => $data->description(),
-            'robots' => (string) $data->robots(),
-            'canonical' => $this->formatUrl($data->canonical()),
-            'pagination' => [
+            'title'          => $data->title(),
+            'description'    => $data->description(),
+            'robots'         => (string) $data->robots(),
+            'canonical'      => $this->formatUrl($data->canonical()),
+            'pagination'     => [
                 'prev' => $this->formatUrl($data->prev()),
                 'next' => $this->formatUrl($data->next()),
             ],
             'relAltHreflang' => array_map(
                 fn (array $item) => [
                     'hreflang' => $item['hreflang'],
-                    'href' => $this->formatUrl($item['href']),
+                    'href'     => $this->formatUrl($item['href']),
                 ],
                 $data->alternateHrefLang()->jsonSerialize()
             ),
-            'h1' => $data->h1s(),
-            'opengraph' => $this->formatTagCollection($data->openGraph()),
-            'twitter' => $this->formatTagCollection($data->twitter()),
+            'h1'             => $data->h1s(),
+            'opengraph'      => $this->formatTagCollection($data->openGraph()),
+            'twitter'        => $this->formatTagCollection($data->twitter()),
         ];
     }
 

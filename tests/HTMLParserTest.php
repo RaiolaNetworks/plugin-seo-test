@@ -1,9 +1,11 @@
 <?php
 
-namespace Juampi92\TestSEO\Tests;
+declare(strict_types=1);
 
-use Juampi92\TestSEO\Parser\HTMLParser;
+namespace Raiolanetworks\PluginSEOTest\Tests;
+
 use PHPUnit\Framework\TestCase;
+use Raiolanetworks\PluginSEOTest\Parser\HTMLParser;
 
 class HTMLParserTest extends TestCase
 {
@@ -34,7 +36,7 @@ EMPTY_HTML;
 <!DOCTYPE html>
 <html>
     <body>
-        <p>This is the text inside a P</p>    
+        <p>This is the text inside a P</p>
     </body>
 </html>
 HTML;
@@ -57,7 +59,7 @@ HTML;
 <html>
     <head>
         <meta name="oops" foo="cool" bar="story">
-        <meta name="oops" foo="cool_2" bar="story_2" nope="yup">    
+        <meta name="oops" foo="cool_2" bar="story_2" nope="yup">
     </head>
 </html>
 HTML;
@@ -94,7 +96,7 @@ HTML;
 <html>
     <head>
         <meta name="oops" foo="cool" bar="story">
-        <meta name="oops" foo="cool_2" bar="story_2" nope="yup">    
+        <meta name="oops" foo="cool_2" bar="story_2" nope="yup">
     </head>
 </html>
 HTML;
