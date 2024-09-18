@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Raiolanetworks\PluginTestSEO\Tests\Tags;
+namespace Raiolanetworks\PluginSEOTest\Tests\Tags;
 
 use PHPUnit\Framework\TestCase;
-use Raiolanetworks\PluginTestSEO\Tags\AlternateHrefLangCollection;
+use Raiolanetworks\PluginSEOTest\Tags\AlternateHrefLangCollection;
 
 class AlternateHrefLangCollectionTest extends TestCase
 {

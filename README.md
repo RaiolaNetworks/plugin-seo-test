@@ -179,7 +179,7 @@ $json = json_encode($seo);
 
 ```php
 use function Spatie\Snapshots\{assertMatchesSnapshot, assertMatchesJsonSnapshot};
-use Raiolanetworks\PluginTestSEO\TestSEO;
+use Raiolanetworks\PluginSEOTest\TestSEO;
 
 test('landing page SEO', function () {
     $response = $this->get('/');

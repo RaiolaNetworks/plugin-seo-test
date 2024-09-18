@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Raiolanetworks\PluginTestSEO\Tests;
+namespace Raiolanetworks\PluginSEOTest\Tests;
 
 use PHPUnit\Framework\TestCase;
-use Raiolanetworks\PluginTestSEO\Support\ArrayPluck;
+use Raiolanetworks\PluginSEOTest\Support\ArrayPluck;
 
 class ArrayPluckTest extends TestCase
 {

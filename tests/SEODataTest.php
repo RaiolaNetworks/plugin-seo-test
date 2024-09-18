@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Raiolanetworks\PluginTestSEO\Tests;
+namespace Raiolanetworks\PluginSEOTest\Tests;
 
 use PHPUnit\Framework\TestCase;
-use Raiolanetworks\PluginTestSEO\Parser\HTMLParser;
-use Raiolanetworks\PluginTestSEO\SEOData;
+use Raiolanetworks\PluginSEOTest\Parser\HTMLParser;
+use Raiolanetworks\PluginSEOTest\SEOData;
 
 class SEODataTest extends TestCase
 {

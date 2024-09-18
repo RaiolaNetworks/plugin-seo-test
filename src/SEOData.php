@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Raiolanetworks\PluginTestSEO;
+namespace Raiolanetworks\PluginSEOTest;
 
 use Illuminate\Support\Traits\Macroable;
-use Raiolanetworks\PluginTestSEO\Parser\HTMLParser;
-use Raiolanetworks\PluginTestSEO\Support\ArrayPluck;
-use Raiolanetworks\PluginTestSEO\Support\Memo;
-use Raiolanetworks\PluginTestSEO\Tags\AlternateHrefLangCollection;
-use Raiolanetworks\PluginTestSEO\Tags\Robots;
-use Raiolanetworks\PluginTestSEO\Tags\TagCollection;
+use Raiolanetworks\PluginSEOTest\Parser\HTMLParser;
+use Raiolanetworks\PluginSEOTest\Support\ArrayPluck;
+use Raiolanetworks\PluginSEOTest\Support\Memo;
+use Raiolanetworks\PluginSEOTest\Tags\AlternateHrefLangCollection;
+use Raiolanetworks\PluginSEOTest\Tags\Robots;
+use Raiolanetworks\PluginSEOTest\Tags\TagCollection;
 use Spatie\Url\Url;
 
 class SEOData

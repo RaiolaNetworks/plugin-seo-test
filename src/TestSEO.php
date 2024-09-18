@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Raiolanetworks\PluginTestSEO;
+namespace Raiolanetworks\PluginSEOTest;
 
 use JsonSerializable;
 use PHPUnit\Framework\Assert;
-use Raiolanetworks\PluginTestSEO\Parser\HTMLParser;
-use Raiolanetworks\PluginTestSEO\SnapshotFormatters\SimpleSerializer;
-use Raiolanetworks\PluginTestSEO\SnapshotFormatters\SnapshotSerializer;
+use Raiolanetworks\PluginSEOTest\Parser\HTMLParser;
+use Raiolanetworks\PluginSEOTest\SnapshotFormatters\SimpleSerializer;
+use Raiolanetworks\PluginSEOTest\SnapshotFormatters\SnapshotSerializer;
 
 class TestSEO implements JsonSerializable
 {

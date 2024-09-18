@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Raiolanetworks\PluginTestSEO\Tags;
+namespace Raiolanetworks\PluginSEOTest\Tags;
 
 use JsonSerializable;
 

@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Raiolanetworks\PluginTestSEO\Tests\Tags;
+namespace Raiolanetworks\PluginSEOTest\Tests\Tags;
 
 use PHPUnit\Framework\TestCase;
-use Raiolanetworks\PluginTestSEO\Support\ArrayPluck;
-use Raiolanetworks\PluginTestSEO\Tags\TagCollection;
+use Raiolanetworks\PluginSEOTest\Support\ArrayPluck;
+use Raiolanetworks\PluginSEOTest\Tags\TagCollection;
 
 class TagCollectionTest extends TestCase
 {

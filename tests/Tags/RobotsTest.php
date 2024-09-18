@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Raiolanetworks\PluginTestSEO\Tests\DTOs;
+namespace Raiolanetworks\PluginSEOTest\Tests\DTOs;
 
 use PHPUnit\Framework\TestCase;
-use Raiolanetworks\PluginTestSEO\Tags\Robots;
+use Raiolanetworks\PluginSEOTest\Tags\Robots;
 
 class RobotsTest extends TestCase
 {

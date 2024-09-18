@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Raiolanetworks\PluginTestSEO\SnapshotFormatters;
+namespace Raiolanetworks\PluginSEOTest\SnapshotFormatters;
 
-use Raiolanetworks\PluginTestSEO\SEOData;
+use Raiolanetworks\PluginSEOTest\SEOData;
 
 interface SnapshotSerializer
 {

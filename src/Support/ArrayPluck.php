@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Raiolanetworks\PluginTestSEO\Support;
+namespace Raiolanetworks\PluginSEOTest\Support;
 
 class ArrayPluck
 {

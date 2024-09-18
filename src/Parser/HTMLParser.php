@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Raiolanetworks\PluginTestSEO\Parser;
+namespace Raiolanetworks\PluginSEOTest\Parser;
 
 use DOMElement;
 use DOMNode;

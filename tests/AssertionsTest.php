@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Raiolanetworks\PluginTestSEO\Tests;
+namespace Raiolanetworks\PluginSEOTest\Tests;
 
 use PHPUnit\Framework\ExpectationFailedException;
 use PHPUnit\Framework\TestCase;
-use Raiolanetworks\PluginTestSEO\TestSEO;
+use Raiolanetworks\PluginSEOTest\TestSEO;
 
 class AssertionsTest extends TestCase
 {

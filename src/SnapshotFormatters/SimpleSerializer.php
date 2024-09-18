@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Raiolanetworks\PluginTestSEO\SnapshotFormatters;
+namespace Raiolanetworks\PluginSEOTest\SnapshotFormatters;
 
-use Raiolanetworks\PluginTestSEO\SEOData;
-use Raiolanetworks\PluginTestSEO\Tags\TagCollection;
+use Raiolanetworks\PluginSEOTest\SEOData;
+use Raiolanetworks\PluginSEOTest\Tags\TagCollection;
 
 class SimpleSerializer implements SnapshotSerializer
 {
