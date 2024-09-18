@@ -1,6 +1,8 @@
 <?php
 
-namespace Juampi92\TestSEO\Tags;
+declare(strict_types=1);
+
+namespace Raiolanetworks\PluginSEOTest\Tags;
 
 use JsonSerializable;
 

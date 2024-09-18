@@ -1,12 +1,14 @@
 <?php
 
-namespace Juampi92\TestSEO;
+declare(strict_types=1);
+
+namespace Raiolanetworks\PluginSEOTest;
 
 use JsonSerializable;
-use Juampi92\TestSEO\Parser\HTMLParser;
-use Juampi92\TestSEO\SnapshotFormatters\SimpleSerializer;
-use Juampi92\TestSEO\SnapshotFormatters\SnapshotSerializer;
 use PHPUnit\Framework\Assert;
+use Raiolanetworks\PluginSEOTest\Parser\HTMLParser;
+use Raiolanetworks\PluginSEOTest\SnapshotFormatters\SimpleSerializer;
+use Raiolanetworks\PluginSEOTest\SnapshotFormatters\SnapshotSerializer;
 
 class TestSEO implements JsonSerializable
 {
@@ -16,9 +18,9 @@ class TestSEO implements JsonSerializable
 
     public function __construct(string $content, ?SnapshotSerializer $snapshotSerializer = null)
     {
-        $html = new HTMLParser($content);
-        $this->data = new SEOData($html);
-        $this->snapshotSerializer = $snapshotSerializer ?? new SimpleSerializer();
+        $html                     = new HTMLParser($content);
+        $this->data               = new SEOData($html);
+        $this->snapshotSerializer = $snapshotSerializer ?? new SimpleSerializer;
     }
 
     /*
@@ -50,8 +52,8 @@ class TestSEO implements JsonSerializable
     {
         $robots = $this->data->robots();
 
-        Assert::assertTrue($robots->noindex(), 'Robots should be noindex and nofollow, but found: '.(string) $robots);
-        Assert::assertTrue($robots->nofollow(), 'Robots should be noindex and nofollow, but found: '.(string) $robots);
+        Assert::assertTrue($robots->noindex(), 'Robots should be noindex and nofollow, but found: ' . (string) $robots);
+        Assert::assertTrue($robots->nofollow(), 'Robots should be noindex and nofollow, but found: ' . (string) $robots);
 
         return $this;
     }

@@ -1,10 +1,12 @@
 <?php
 
-namespace Juampi92\TestSEO\Tests\Tags;
+declare(strict_types=1);
 
-use Juampi92\TestSEO\Support\ArrayPluck;
-use Juampi92\TestSEO\Tags\TagCollection;
+namespace Raiolanetworks\PluginSEOTest\Tests\Tags;
+
 use PHPUnit\Framework\TestCase;
+use Raiolanetworks\PluginSEOTest\Support\ArrayPluck;
+use Raiolanetworks\PluginSEOTest\Tags\TagCollection;
 
 class TagCollectionTest extends TestCase
 {
@@ -58,7 +60,7 @@ class TagCollectionTest extends TestCase
 
         // Assert
         $this->assertEquals([
-            'twitter:url' => 'https://image.url/',
+            'twitter:url'   => 'https://image.url/',
             'twitter:image' => [
                 'https://image.url/here-1.jpg',
                 'https://image.url/here-2.jpg',

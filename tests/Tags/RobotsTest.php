@@ -1,9 +1,11 @@
 <?php
 
-namespace Juampi92\TestSEO\Tests\DTOs;
+declare(strict_types=1);
 
-use Juampi92\TestSEO\Tags\Robots;
+namespace Raiolanetworks\PluginSEOTest\Tests\DTOs;
+
 use PHPUnit\Framework\TestCase;
+use Raiolanetworks\PluginSEOTest\Tags\Robots;
 
 class RobotsTest extends TestCase
 {

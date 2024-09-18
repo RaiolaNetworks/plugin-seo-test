@@ -1,51 +1,62 @@
 {
-  "name": "juampi92/test-seo",
-  "description": "Easy way to test your SEO",
-  "keywords": [
-    "phpunit",
-    "php",
-    "testing",
-    "SEO"
-  ],
-  "homepage": "https://github.com/juampi92/test-seo",
-  "license": "MIT",
-  "authors": [
-    {
-      "name": "Juan Pablo Barreto",
-      "email": "juampi92@gmail.com",
-      "role": "Developer"
-    }
-  ],
-  "require": {
-    "php": "^8.0.2",
-    "illuminate/macroable": "^7.0|^8.0|^9.0|^10.0",
-    "phpunit/phpunit": "^8.3|^9.0|^10.0",
-    "spatie/url": "^1.3.4|^2.0",
-    "symfony/dom-crawler": "^5.4|^6.1"
-  },
-  "require-dev": {
-    "laravel/pint": "^1.0",
-    "phpstan/phpstan": "^1.8"
-  },
-  "autoload": {
-    "psr-4": {
-      "Juampi92\\TestSEO\\": "src"
-    }
-  },
-  "autoload-dev": {
-    "psr-4": {
-      "Juampi92\\TestSEO\\Tests\\": "tests"
-    }
-  },
-  "scripts": {
-    "analyse": "vendor/bin/phpstan analyse -c phpstan.neon.dist",
-    "test": "vendor/bin/phpunit",
-    "test-coverage": "vendor/bin/phpunit --coverage",
-    "format": "vendor/bin/pint"
-  },
-  "config": {
-    "sort-packages": true
-  },
-  "minimum-stability": "dev",
-  "prefer-stable": true
+    "name": "raiolanetworks/plugin-seo-test",
+    "description": "This Composer package provides a seamless integration for testing SEO aspects of your Laravel applications. Compatible with both Pest and PHPUnit, it offers a collection of tools and assertions specifically designed to evaluate on-page SEO elements like meta tags, title tags, canonical URLs, and structured data. By automating SEO testing, this plugin ensures that your application consistently adheres to best SEO practices, helping you catch potential SEO issues early in the development cycle.",
+    "keywords": [
+        "Laravel",
+        "PHPUnit",
+        "PHP",
+        "SEO",
+        "Testing"
+    ],
+    "homepage": "https://github.com/RaiolaNetworks/plugin-seo-test",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Martín Gómez",
+            "email": "martin@raiolanetworks.es",
+            "homepage": "https://raiolanetworks.com",
+            "role": "Developer"
+        },
+        {
+            "name": "David Eguiluz",
+            "email": "davidel@raiolanetworks.es",
+            "homepage": "https://raiolanetworks.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.0.2",
+        "illuminate/macroable": "^7.0|^8.0|^9.0|^10.0|^11.0",
+        "phpunit/phpunit": "^8.3|^9.0|^10.0",
+        "spatie/url": "^1.3.4|^2.0",
+        "symfony/dom-crawler": "^5.4|^6.1"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.0",
+        "phpstan/phpstan": "^1.8"
+    },
+    "autoload": {
+        "psr-4": {
+            "Raiolanetworks\\PluginSEOTest\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Raiolanetworks\\PluginSEOTest\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "analyse": "vendor/bin/phpstan analyse -c phpstan.neon.dist",
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage",
+        "format": "vendor/bin/pint"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "replace": {
+        "juampi92/test-seo": "*"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
