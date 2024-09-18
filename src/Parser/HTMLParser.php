@@ -1,6 +1,8 @@
 <?php
 
-namespace Juampi92\TestSEO\Parser;
+declare(strict_types=1);
+
+namespace Raiolanetworks\PluginTestSEO\Parser;
 
 use DOMElement;
 use DOMNode;
@@ -21,7 +23,7 @@ class HTMLParser
     }
 
     /**
-     * @param  string|array<string>  $attributes
+     * @param  string|array<string>                   $attributes
      * @return string|array<string, string|null>|null
      */
     public function grabAttributeFrom(string $xpath, $attributes)
@@ -36,12 +38,12 @@ class HTMLParser
     }
 
     /**
-     * @param  string|array<string>|null  $attribute
+     * @param string|array<string>|null $attribute
      */
     public function grabMultiple(string $xpath, $attribute = null): array
     {
         $result = [];
-        $nodes = $this->crawler->filterXPath($xpath);
+        $nodes  = $this->crawler->filterXPath($xpath);
 
         foreach ($nodes as $node) {
             $result[] = $attribute !== null ? $this->getArgumentsFromNode($node, $attribute) : $node->textContent;
@@ -51,8 +53,8 @@ class HTMLParser
     }
 
     /**
-     * @param  DOMElement|DOMNode|null  $element
-     * @param  string|array<string>  $attributes
+     * @param  DOMElement|DOMNode|null           $element
+     * @param  string|array<string>              $attributes
      * @return string|array<string, string|null>
      */
     private function getArgumentsFromNode($element, $attributes)

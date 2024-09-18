@@ -1,8 +1,10 @@
 <?php
 
-namespace Juampi92\TestSEO\SnapshotFormatters;
+declare(strict_types=1);
 
-use Juampi92\TestSEO\SEOData;
+namespace Raiolanetworks\PluginTestSEO\SnapshotFormatters;
+
+use Raiolanetworks\PluginTestSEO\SEOData;
 
 interface SnapshotSerializer
 {

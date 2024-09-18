@@ -1,14 +1,16 @@
 <?php
 
-namespace Juampi92\TestSEO;
+declare(strict_types=1);
+
+namespace Raiolanetworks\PluginTestSEO;
 
 use Illuminate\Support\Traits\Macroable;
-use Juampi92\TestSEO\Parser\HTMLParser;
-use Juampi92\TestSEO\Support\ArrayPluck;
-use Juampi92\TestSEO\Support\Memo;
-use Juampi92\TestSEO\Tags\AlternateHrefLangCollection;
-use Juampi92\TestSEO\Tags\Robots;
-use Juampi92\TestSEO\Tags\TagCollection;
+use Raiolanetworks\PluginTestSEO\Parser\HTMLParser;
+use Raiolanetworks\PluginTestSEO\Support\ArrayPluck;
+use Raiolanetworks\PluginTestSEO\Support\Memo;
+use Raiolanetworks\PluginTestSEO\Tags\AlternateHrefLangCollection;
+use Raiolanetworks\PluginTestSEO\Tags\Robots;
+use Raiolanetworks\PluginTestSEO\Tags\TagCollection;
 use Spatie\Url\Url;
 
 class SEOData
@@ -18,8 +20,7 @@ class SEOData
 
     public function __construct(
         private HTMLParser $html
-    ) {
-    }
+    ) {}
 
     public function title(): ?string
     {

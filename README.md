@@ -51,7 +51,7 @@ public function testLandingPageSEO()
 {
     // Arrange
     // ...
-    
+
     // Act
     $response = $client->get('/')->send();
 
@@ -60,7 +60,7 @@ public function testLandingPageSEO()
     $html = json_decode($response->getBody(true), true);
 
     $seo = new TestSEO($html);
-    
+
     // Assert
     $seo
         ->assertTitleEndsWith(' - My Website')
@@ -75,7 +75,7 @@ public function test_landing_page_SEO()
 {
     // Arrange
     // ...
-    
+
     // Act
     $response = $this->get('/');
 
@@ -83,7 +83,7 @@ public function test_landing_page_SEO()
     $response->assertStatus(200);
 
     $seo = new TestSEO($response->getContent());
-    
+
     $seo
         ->assertTitleEndsWith(' - My Website')
         ->assertCanonicalIs('https://www.mywebsite.com/');
@@ -96,12 +96,12 @@ public function test_landing_page_SEO()
 test('landing page SEO tags', function () {
     // Arrange
     // ...
-    
+
     // Act
     $response = get('/')->assertStatus(200);
-    
+
     $seo = new TestSEO($response->getContent());
-    
+
     // Assert
     expect($seo->data)
         ->title()->toEndWith(' - My Website')
@@ -134,7 +134,7 @@ Here are the available methods:
 | `h2s()`               | `array<string>`                                                                                                             | All H2 in the page. `<h2>{this}</h2>`                       |
 | `charset()`           | `?string`                                                                                                                   | `<meta charset="utf-8">`                                    |
 
-The SEOData class is **Macroable**, so feel free to extend it yourself. 
+The SEOData class is **Macroable**, so feel free to extend it yourself.
 
 ## Assertions
 
@@ -179,7 +179,7 @@ $json = json_encode($seo);
 
 ```php
 use function Spatie\Snapshots\{assertMatchesSnapshot, assertMatchesJsonSnapshot};
-use Juampi92\TestSEO\TestSEO;
+use Raiolanetworks\PluginTestSEO\TestSEO;
 
 test('landing page SEO', function () {
     $response = $this->get('/');

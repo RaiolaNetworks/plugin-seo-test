@@ -1,11 +1,13 @@
 <?php
 
-namespace Juampi92\TestSEO\Tags;
+declare(strict_types=1);
+
+namespace Raiolanetworks\PluginTestSEO\Tags;
 
 use JsonSerializable;
 use Stringable;
 
-class Robots implements Stringable, JsonSerializable
+class Robots implements JsonSerializable, Stringable
 {
     public const INDEX = 'index';
 

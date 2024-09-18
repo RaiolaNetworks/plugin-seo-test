@@ -1,6 +1,8 @@
 <?php
 
-namespace Juampi92\TestSEO\Tags;
+declare(strict_types=1);
+
+namespace Raiolanetworks\PluginTestSEO\Tags;
 
 class TagCollection
 {
@@ -8,8 +10,7 @@ class TagCollection
         private string $prefix,
         /** @var array<string, string|array<string>> */
         private array $metadata,
-    ) {
-    }
+    ) {}
 
     /**
      * @return string|array<string>|null
@@ -17,7 +18,7 @@ class TagCollection
     public function get(string $property)
     {
         // Normalize property
-        $property = $this->prefix.ltrim($property, $this->prefix);
+        $property = $this->prefix . ltrim($property, $this->prefix);
 
         return $this->metadata[$property] ?? null;
     }

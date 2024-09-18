@@ -1,27 +1,27 @@
 <?php
 
-namespace Juampi92\TestSEO\Support;
+declare(strict_types=1);
+
+namespace Raiolanetworks\PluginTestSEO\Support;
 
 class ArrayPluck
 {
     /**
-     * @param  array<array<string, string>>  $items
+     * @param array<array<string, string>> $items
      */
-    public function __construct(private array $items)
-    {
-    }
+    public function __construct(private array $items) {}
 
     /**
      * @return array<string, string|array<string>>
      */
     public function __invoke(string $key, string $value): array
     {
-        $array = $this->items;
+        $array   = $this->items;
         $results = [];
 
         foreach ($array as $item) {
             $itemValue = $item[$value];
-            $itemKey = $item[$key];
+            $itemKey   = $item[$key];
 
             if (! isset($results[$itemKey])) {
                 $results[$itemKey] = $itemValue;

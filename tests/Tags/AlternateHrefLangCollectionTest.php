@@ -1,9 +1,11 @@
 <?php
 
-namespace Juampi92\TestSEO\Tests\Tags;
+declare(strict_types=1);
 
-use Juampi92\TestSEO\Tags\AlternateHrefLangCollection;
+namespace Raiolanetworks\PluginTestSEO\Tests\Tags;
+
 use PHPUnit\Framework\TestCase;
+use Raiolanetworks\PluginTestSEO\Tags\AlternateHrefLangCollection;
 
 class AlternateHrefLangCollectionTest extends TestCase
 {
