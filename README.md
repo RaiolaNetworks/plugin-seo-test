@@ -1,11 +1,21 @@
-# Test SEO
+# Plugin SEO Test
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/juampi92/test-seo.svg?style=flat-square)](https://packagist.org/packages/juampi92/test-seo)
-[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/juampi92/test-seo/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/juampi92/test-seo/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/juampi92/test-seo/pint.yml?branch=main&label=code-style&style=flat-square)](https://github.com/juampi92/test-seo/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
-[![Total Downloads](https://img.shields.io/packagist/dt/juampi92/test-seo.svg?style=flat-square)](https://packagist.org/packages/juampi92/test-seo)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/raiolanetworks/plugin-seo-test.svg?style=flat-square)](https://packagist.org/packages/raiolanetworks/plugin-seo-test)
+[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/raiolanetworks/plugin-seo-test/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/raiolanetworks/plugin-seo-test/actions?query=workflow%3Arun-tests+branch%3Amain)
+[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/raiolanetworks/plugin-seo-test/pint.yml?branch=main&label=code-style&style=flat-square)](https://github.com/raiolanetworks/plugin-seo-test/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
+[![Total Downloads](https://img.shields.io/packagist/dt/raiolanetworks/plugin-seo-test.svg?style=flat-square)](https://packagist.org/packages/raiolanetworks/plugin-seo-test)
 
-An easy-to-use package for testing SEO. The package allows you to extract SEO tags from a given HTML and verify that the SEO structure is correct.
+This Composer package provides a seamless integration for testing SEO aspects of your Laravel applications.
+Compatible with both Pest and PHPUnit, it offers a collection of tools and assertions specifically designed to evaluate on-page SEO elements like meta tags, title tags, canonical URLs, and structured data.
+By automating SEO testing, this plugin ensures that your application consistently adheres to best SEO practices, helping you catch potential SEO issues early in the development cycle.
+
+
+## Get to know us
+
+[<img src="https://cdn-assets.raiolanetworks.com/dist/images/logos/logo-blue.svg" width="419px" />](https://raiolanetworks.com)
+
+
+## Installation
 
 - [Installation](#instalation)
 - [Usage](#usage)
@@ -23,7 +33,7 @@ An easy-to-use package for testing SEO. The package allows you to extract SEO ta
 You can install the package via composer:
 
 ```bash
-composer require juampi92/test-seo --dev
+composer require raiolanetworks/plugin-seo-test --dev
 ```
 
 ## Usage
@@ -122,13 +132,13 @@ Here are the available methods:
 | `title()`             | `?string`                                                                                                                   | `<title>{this}</title>`                                     |
 | `description()`       | `?string`                                                                                                                   | `<meta name="description" content="{this}">`                |
 | `image()`             | `?Url` [🔍](https://github.com/spatie/url)                                                                                                                   | `<meta name="image" content="{this}">`                      |
-| `robots()`            | `Robots` [🔍](https://github.com/juampi92/test-seo/blob/main/src/Tags/Robots.php)                                           | `<meta name="robots" content="{this}">`                     |
+| `robots()`            | `Robots` [🔍](https://github.com/raiolanetworks/plugin-seo-test/blob/main/src/Tags/Robots.php)                                           | `<meta name="robots" content="{this}">`                     |
 | `canonical()`         | `?Url` [🔍](https://github.com/spatie/url)                                                                                  | `<link rel="canonical" href="{this}">`                      |
 | `prev()`              | `?Url` [🔍](https://github.com/spatie/url)                                                                                  | `<link rel="prev" href="{this}">`                           |
 | `next()`              | `?Url` [🔍](https://github.com/spatie/url)                                                                                  | `<link rel="next" href="{this}">`                           |
-| `openGraph()`         | `TagCollection` [🔍](https://github.com/juampi92/test-seo/blob/main/src/Tags/TagCollection.php)                             | `<meta property="og:{key}" content="{value}">`                  |
-| `twitter()`           | `TagCollection` [🔍](https://github.com/juampi92/test-seo/blob/main/src/Tags/TagCollection.php)                             | `<meta name="twitter:{key}" content="{value}">`             |
-| `alternateHrefLang()` | `AlternateHrefLangCollection` [🔍](https://github.com/juampi92/test-seo/blob/main/src/Tags/AlternateHrefLangCollection.php) | `<link name="alternate" hreflang="{hreflang}" href={href}>` |
+| `openGraph()`         | `TagCollection` [🔍](https://github.com/raiolanetworks/plugin-seo-test/blob/main/src/Tags/TagCollection.php)                             | `<meta property="og:{key}" content="{value}">`                  |
+| `twitter()`           | `TagCollection` [🔍](https://github.com/raiolanetworks/plugin-seo-test/blob/main/src/Tags/TagCollection.php)                             | `<meta name="twitter:{key}" content="{value}">`             |
+| `alternateHrefLang()` | `AlternateHrefLangCollection` [🔍](https://github.com/raiolanetworks/plugin-seo-test/blob/main/src/Tags/AlternateHrefLangCollection.php) | `<link name="alternate" hreflang="{hreflang}" href={href}>` |
 | `images()`            | `array<array{src: string, alt: string, title: string}>`                                                                     | All images in the page. `<img src="...">`                   |
 | `h1s()`               | `array<string>`                                                                                                             | All H1 in the page. `<h1>{this}</h1>`                       |
 | `h2s()`               | `array<string>`                                                                                                             | All H2 in the page. `<h2>{this}</h2>`                       |
@@ -200,8 +210,12 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 ## Credits
 
-- [Juan Pablo Barreto](https://github.com/juampi92)
-- [All Contributors](../../contributors)
+- [Martín Gómez](https://github.com/soymgomez)
+- [David Eguiluz](https://github.com/eguiluz)
+
+## Credits to the original project
+
+- [https://github.com/juampi92](https://github.com/juampi92/test-seo)
 
 ## License
 
