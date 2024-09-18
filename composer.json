@@ -1,18 +1,26 @@
 {
-    "name": "juampi92/test-seo",
-    "description": "Easy way to test your SEO",
+    "name": "raiolanetworks/plugin-seo-test",
+    "description": "This Composer package provides a seamless integration for testing SEO aspects of your Laravel applications. Compatible with both Pest and PHPUnit, it offers a collection of tools and assertions specifically designed to evaluate on-page SEO elements like meta tags, title tags, canonical URLs, and structured data. By automating SEO testing, this plugin ensures that your application consistently adheres to best SEO practices, helping you catch potential SEO issues early in the development cycle.",
     "keywords": [
-        "phpunit",
-        "php",
-        "testing",
-        "SEO"
+        "Laravel",
+        "PHPUnit",
+        "PHP",
+        "SEO",
+        "Testing"
     ],
-    "homepage": "https://github.com/juampi92/test-seo",
+    "homepage": "https://github.com/RaiolaNetworks/plugin-seo-test",
     "license": "MIT",
     "authors": [
         {
-            "name": "Juan Pablo Barreto",
-            "email": "juampi92@gmail.com",
+            "name": "Martín Gómez",
+            "email": "martin@raiolanetworks.es",
+            "homepage": "https://raiolanetworks.com",
+            "role": "Developer"
+        },
+        {
+            "name": "David Eguiluz",
+            "email": "davidel@raiolanetworks.es",
+            "homepage": "https://raiolanetworks.com",
             "role": "Developer"
         }
     ],
@@ -45,6 +53,9 @@
     },
     "config": {
         "sort-packages": true
+    },
+    "replace": {
+        "juampi92/test-seo": "*"
     },
     "minimum-stability": "dev",
     "prefer-stable": true
