@@ -29,12 +29,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Juampi92\\TestSEO\\": "src"
+            "Raiolanetworks\\PluginTestSEO\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Juampi92\\TestSEO\\Tests\\": "tests"
+            "Raiolanetworks\\PluginTestSEO\\Tests\\": "tests"
         }
     },
     "scripts": {
