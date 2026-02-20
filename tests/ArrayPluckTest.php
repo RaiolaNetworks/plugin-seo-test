@@ -4,14 +4,13 @@ declare(strict_types=1);
 
 namespace Raiolanetworks\PluginSEOTest\Tests;
 
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 use Raiolanetworks\PluginSEOTest\Support\ArrayPluck;
 
 class ArrayPluckTest extends TestCase
 {
-    /**
-     * @dataProvider pluckDataProvider
-     */
+    #[DataProvider('pluckDataProvider')]
     public function test_should_pluck_array(array $expected, array $items, string $key, string $value): void
     {
         $this->assertEqualsCanonicalizing(

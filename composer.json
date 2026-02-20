@@ -32,7 +32,7 @@
         "symfony/dom-crawler": "^6.1|^7.0"
     },
     "require-dev": {
-        "laravel/pint": "^1.0",
+        "laravel/pint": "^1.18",
         "phpstan/phpstan": "^1.8"
     },
     "autoload": {

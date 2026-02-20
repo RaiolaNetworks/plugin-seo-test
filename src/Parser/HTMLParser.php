@@ -23,10 +23,12 @@ class HTMLParser
     }
 
     /**
-     * @param  string|array<string>  $attributes
-     * @return string|array<string, string|null>|null
+     * @template T of string|array<string>
+     *
+     * @param  T  $attributes
+     * @return (T is string ? string|null : array<string, string|null>|null)
      */
-    public function grabAttributeFrom(string $xpath, $attributes)
+    public function grabAttributeFrom(string $xpath, string|array $attributes)
     {
         $nodes = $this->crawler->filterXPath($xpath);
 
@@ -53,11 +55,12 @@ class HTMLParser
     }
 
     /**
-     * @param  DOMElement|DOMNode|null  $element
-     * @param  string|array<string>  $attributes
-     * @return string|array<string, string|null>
+     * @template T of string|array<string>
+     *
+     * @param  T  $attributes
+     * @return (T is string ? string : array<string, string|null>)
      */
-    private function getArgumentsFromNode($element, $attributes)
+    private function getArgumentsFromNode(DOMElement|DOMNode|null $element, string|array $attributes)
     {
         if (! $element || ! ($element instanceof DOMElement)) {
             return [];
