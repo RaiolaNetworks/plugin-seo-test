@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Raiolanetworks\PluginSEOTest\Tests;
 
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\ExpectationFailedException;
 use PHPUnit\Framework\TestCase;
 use Raiolanetworks\PluginSEOTest\TestSEO;
@@ -13,7 +14,7 @@ class AssertionsTest extends TestCase
     public function test_should_pass_assertions(): void
     {
         // Arrange
-        $page = file_get_contents(__DIR__ . '/stubs/test-case-2.html');
+        $page = file_get_contents(__DIR__.'/stubs/test-case-2.html');
 
         // Act
         $testSeo = new TestSEO($page);
@@ -36,15 +37,13 @@ class AssertionsTest extends TestCase
         $this->assertEquals('https://testpage.com/es/product/44/reviews?page=2', $testSeo->data->alternateHrefLang()->get('es'));
     }
 
-    /**
-     * @dataProvider breakAssertionsCase2DataProvider
-     */
+    #[DataProvider('breakAssertionsCase2DataProvider')]
     public function test_should_break_on_assertions_case_2(callable $evaluation): void
     {
         $this->expectException(ExpectationFailedException::class);
 
         // Arrange
-        $page = file_get_contents(__DIR__ . '/stubs/test-case-2.html');
+        $page = file_get_contents(__DIR__.'/stubs/test-case-2.html');
 
         // Act
         $testSeo = new TestSEO($page);
@@ -56,11 +55,11 @@ class AssertionsTest extends TestCase
     public static function breakAssertionsCase2DataProvider(): array
     {
         return [
-            'Empty canonical'         => [fn (TestSEO $testSEO) => $testSEO->assertCanonicalIsEmpty()],
-            'Wrong canonical'         => [fn (TestSEO $testSEO) => $testSEO->assertCanonicalIs('https://testpage.com/en/product/44?asd=1')],
-            'Empty Pagination'        => [fn (TestSEO $testSEO) => $testSEO->assertPaginationIsEmpty()],
-            'Empty Robots'            => [fn (TestSEO $testSEO) => $testSEO->assertRobotsIsEmpty()],
-            'Wrong Title'             => [fn (TestSEO $testSEO) => $testSEO->assertTitleIs('This is my test title')],
+            'Empty canonical' => [fn (TestSEO $testSEO) => $testSEO->assertCanonicalIsEmpty()],
+            'Wrong canonical' => [fn (TestSEO $testSEO) => $testSEO->assertCanonicalIs('https://testpage.com/en/product/44?asd=1')],
+            'Empty Pagination' => [fn (TestSEO $testSEO) => $testSEO->assertPaginationIsEmpty()],
+            'Empty Robots' => [fn (TestSEO $testSEO) => $testSEO->assertRobotsIsEmpty()],
+            'Wrong Title' => [fn (TestSEO $testSEO) => $testSEO->assertTitleIs('This is my test title')],
             'Empty AlternateHreflang' => [fn (TestSEO $testSEO) => $testSEO->assertAlternateHrefLangIsEmpty()],
         ];
     }
@@ -68,7 +67,7 @@ class AssertionsTest extends TestCase
     public function test_should_pass_assertions_on_empty_case_3(): void
     {
         // Arrange
-        $page = file_get_contents(__DIR__ . '/stubs/test-case-3.html');
+        $page = file_get_contents(__DIR__.'/stubs/test-case-3.html');
 
         // Act
         $testSeo = new TestSEO($page);
@@ -81,15 +80,13 @@ class AssertionsTest extends TestCase
             ->assertAlternateHrefLangIsEmpty();
     }
 
-    /**
-     * @dataProvider breakAssertionsCase3DataProvider
-     */
+    #[DataProvider('breakAssertionsCase3DataProvider')]
     public function test_should_break_on_assertions_case_3(callable $evaluation): void
     {
         $this->expectException(ExpectationFailedException::class);
 
         // Arrange
-        $page = file_get_contents(__DIR__ . '/stubs/test-case-3.html');
+        $page = file_get_contents(__DIR__.'/stubs/test-case-3.html');
 
         // Act
         $testSeo = new TestSEO($page);
@@ -101,7 +98,7 @@ class AssertionsTest extends TestCase
     public static function breakAssertionsCase3DataProvider(): array
     {
         return [
-            'More than one h1'       => [fn (TestSEO $testSEO) => $testSEO->assertThereIsOnlyOneH1()],
+            'More than one h1' => [fn (TestSEO $testSEO) => $testSEO->assertThereIsOnlyOneH1()],
             'Has images with no alt' => [fn (TestSEO $testSEO) => $testSEO->assertAllImagesHaveAltText()],
         ];
     }

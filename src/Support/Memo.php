@@ -11,7 +11,7 @@ trait Memo
     /**
      * @template TValue
      *
-     * @param  callable(): TValue $value
+     * @param  callable(): TValue  $value
      * @return TValue
      */
     protected function memo(string $key, callable $value): mixed
