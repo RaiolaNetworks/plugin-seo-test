@@ -5,15 +5,9 @@
 [![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/raiolanetworks/plugin-seo-test/pint.yml?branch=main&label=code-style&style=flat-square)](https://github.com/raiolanetworks/plugin-seo-test/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/raiolanetworks/plugin-seo-test.svg?style=flat-square)](https://packagist.org/packages/raiolanetworks/plugin-seo-test)
 
-This Composer package provides a seamless integration for testing SEO aspects of your Laravel applications.
-Compatible with both Pest and PHPUnit, it offers a collection of tools and assertions specifically designed to evaluate on-page SEO elements like meta tags, title tags, canonical URLs, and structured data.
-By automating SEO testing, this plugin ensures that your application consistently adheres to best SEO practices, helping you catch potential SEO issues early in the development cycle.
+SEO testing assertions for Laravel applications. Compatible with PHPUnit and Pest.
 
-
-## Get to know us
-
-[<img src="https://cdn-assets.raiolanetworks.com/dist/images/logos/logo-blue.svg" width="419px" />](https://raiolanetworks.com)
-
+Test meta tags, titles, canonical URLs, Open Graph, Twitter Cards, robots directives, and more with a fluent API.
 
 ## Requirements
 
@@ -210,18 +204,21 @@ test('landing page SEO', function () {
 
 **Note:** this example requires `spatie/pest-plugin-snapshots`.
 
+## Changelog
+
+See [Releases](https://github.com/RaiolaNetworks/plugin-seo-test/releases) for a list of changes.
+
 ## Contributing
 
 Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 ## Credits
 
-- [Martín Gómez](https://github.com/soymgomez)
+- [Martin Gomez](https://github.com/soymgomez)
 - [David Eguiluz](https://github.com/eguiluz)
+- Based on [juampi92/test-seo](https://github.com/juampi92/test-seo)
 
-## Credits to the original project
-
-- [https://github.com/juampi92](https://github.com/juampi92/test-seo)
+[<img src="https://cdn-assets.raiolanetworks.com/dist/images/logos/logo-blue.svg" width="300px" />](https://raiolanetworks.com)
 
 ## License
 
