@@ -6,6 +6,7 @@ namespace Raiolanetworks\PluginSEOTest\SnapshotFormatters;
 
 use Raiolanetworks\PluginSEOTest\SEOData;
 use Raiolanetworks\PluginSEOTest\Tags\TagCollection;
+use Stringable;
 
 class SimpleSerializer implements SnapshotSerializer
 {
@@ -61,12 +62,12 @@ class SimpleSerializer implements SnapshotSerializer
         return $this->formatUrl($url);
     }
 
-    protected function formatUrl(?string $url): ?string
+    protected function formatUrl(string|Stringable|null $url): ?string
     {
         if (! $url) {
             return null;
         }
 
-        return preg_replace('/\d+/', '{id}', $url);
+        return preg_replace('/\d+/', '{id}', (string) $url);
     }
 }
