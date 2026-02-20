@@ -15,16 +15,22 @@ By automating SEO testing, this plugin ensures that your application consistentl
 [<img src="https://cdn-assets.raiolanetworks.com/dist/images/logos/logo-blue.svg" width="419px" />](https://raiolanetworks.com)
 
 
-## Installation
+## Requirements
 
-- [Installation](#instalation)
+- PHP 8.2+
+- Laravel 11 or 12
+- PHPUnit 10 or 11
+
+## Table of Contents
+
+- [Installation](#installation)
 - [Usage](#usage)
   - [PHPUnit](#phpunit)
   - [Laravel](#laravel)
   - [Pest](#pest)
 - [API](#seo-data)
   - [SEO Data](#seo-data)
-  - [Assertions](#sssertions)
+  - [Assertions](#assertions)
 - [Snapshot testing](#snapshots)
 
 ----
@@ -153,7 +159,7 @@ The SEOData class is **Macroable**, so feel free to extend it yourself.
 | `assertCanonicalIs(string $expected)`   |                                                                                                           |
 | `assertCanonicalIsEmpty()`              |                                                                                                           |
 | `assertRobotsIsEmpty()`                 |                                                                                                           |
-| `assertRobotsIsNoIndexNoFollow()`       | Checks that the robots are `noindex, nofollo` or `none`                                                   |
+| `assertRobotsIsNoIndexNoFollow()`       | Checks that the robots are `noindex, nofollow` or `none`                                                  |
 | `assertPaginationIsEmpty()`             | `prev` and `next` are both missing.                                                                       |
 | `assertAlternateHrefLangIsEmpty()`      |                                                                                                           |
 | `assertTitleIs(string $expected)`       |                                                                                                           |
@@ -171,13 +177,13 @@ When it comes to SEO, a snapshot test is a great way to ensure nothing has been 
 Here is an example:
 
 ```php
-$seo = new TestSEO($response->getContent(), snapshotSerializer: null);
+$seo = new TestSEO($response->getContent());
 
 $json = json_encode($seo);
 ```
 
 By default, the SEO tags are serialized using the `SimpleSerializer`.
-Make your own serializer by implementing the `SnapshotSerializer` interface:
+You can provide your own serializer by implementing the `SnapshotSerializer` interface:
 
 ```php
 $seo = new TestSEO($response->getContent(), new MyCustomSerializer());
