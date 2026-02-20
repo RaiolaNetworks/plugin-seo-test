@@ -39,16 +39,13 @@ class HTMLParser
         return $this->getArgumentsFromNode($nodes->getNode(0), $attributes);
     }
 
-    /**
-     * @param  string|array<string>|null  $attribute
-     */
-    public function grabMultiple(string $xpath, $attribute = null): array
+    public function grabMultiple(string $xpath, string|array|null $attribute = null): array
     {
         $result = [];
         $nodes = $this->crawler->filterXPath($xpath);
 
         foreach ($nodes as $node) {
-            $result[] = $attribute !== null ? $this->getArgumentsFromNode($node, $attribute) : $node->textContent;
+            $result[] = $attribute !== null ? $this->getArgumentsFromNode($node, $attribute) : $node->textContent; // @phpstan-ignore argument.templateType
         }
 
         return $result;

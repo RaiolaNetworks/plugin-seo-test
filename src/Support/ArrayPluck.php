@@ -20,6 +20,10 @@ class ArrayPluck
         $results = [];
 
         foreach ($array as $item) {
+            if (! isset($item[$key], $item[$value])) {
+                continue;
+            }
+
             $itemValue = $item[$value];
             $itemKey = $item[$key];
 
