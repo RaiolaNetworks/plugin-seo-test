@@ -36,6 +36,12 @@ class SimpleSerializer implements SnapshotSerializer
 
     protected function formatTagCollection(TagCollection $collection): ?array
     {
+        $tags = $collection->toArray();
+
+        if ($tags === []) {
+            return null;
+        }
+
         return array_map(
             function ($item) {
                 if (is_array($item)) {
@@ -44,8 +50,8 @@ class SimpleSerializer implements SnapshotSerializer
 
                 return $this->formatIfUrl($item);
             },
-            $collection->toArray(),
-        ) ?: null;
+            $tags,
+        );
     }
 
     protected function formatIfUrl(?string $url): ?string

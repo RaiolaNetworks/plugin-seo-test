@@ -82,7 +82,9 @@ class TestSEO implements JsonSerializable
 
     public function assertTitleContains(string $expected): self
     {
-        Assert::assertStringContainsString($expected, $this->data->title());
+        $title = $this->data->title();
+        Assert::assertNotNull($title, 'Title tag is missing.');
+        Assert::assertStringContainsString($expected, $title);
 
         return $this;
     }
@@ -92,7 +94,9 @@ class TestSEO implements JsonSerializable
      */
     public function assertTitleEndsWith(string $expected): self
     {
-        Assert::assertStringEndsWith($expected, $this->data->title());
+        $title = $this->data->title();
+        Assert::assertNotNull($title, 'Title tag is missing.');
+        Assert::assertStringEndsWith($expected, $title);
 
         return $this;
     }
