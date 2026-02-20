@@ -23,7 +23,7 @@ EMPTY_HTML;
 
         // Act
         $parser = new HTMLParser($page);
-        $seo    = new SEOData($parser);
+        $seo = new SEOData($parser);
 
         // Assert
         $this->assertNull($seo->title());
@@ -45,11 +45,11 @@ EMPTY_HTML;
     public function test_it_parses_html_into_instance(): void
     {
         // Arrange
-        $page = file_get_contents(__DIR__ . '/stubs/test.html');
+        $page = file_get_contents(__DIR__.'/stubs/test.html');
 
         // Act
         $parser = new HTMLParser($page);
-        $seo    = new SEOData($parser);
+        $seo = new SEOData($parser);
 
         // Assert
         $this->assertEquals('This is my test title.', $seo->title());

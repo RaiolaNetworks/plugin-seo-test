@@ -18,8 +18,8 @@ class TestSEO implements JsonSerializable
 
     public function __construct(string $content, ?SnapshotSerializer $snapshotSerializer = null)
     {
-        $html                     = new HTMLParser($content);
-        $this->data               = new SEOData($html);
+        $html = new HTMLParser($content);
+        $this->data = new SEOData($html);
         $this->snapshotSerializer = $snapshotSerializer ?? new SimpleSerializer;
     }
 
@@ -52,8 +52,8 @@ class TestSEO implements JsonSerializable
     {
         $robots = $this->data->robots();
 
-        Assert::assertTrue($robots->noindex(), 'Robots should be noindex and nofollow, but found: ' . (string) $robots);
-        Assert::assertTrue($robots->nofollow(), 'Robots should be noindex and nofollow, but found: ' . (string) $robots);
+        Assert::assertTrue($robots->noindex(), 'Robots should be noindex and nofollow, but found: '.(string) $robots);
+        Assert::assertTrue($robots->nofollow(), 'Robots should be noindex and nofollow, but found: '.(string) $robots);
 
         return $this;
     }

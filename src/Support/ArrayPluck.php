@@ -7,7 +7,7 @@ namespace Raiolanetworks\PluginSEOTest\Support;
 class ArrayPluck
 {
     /**
-     * @param array<array<string, string>> $items
+     * @param  array<array<string, string>>  $items
      */
     public function __construct(private array $items) {}
 
@@ -16,12 +16,12 @@ class ArrayPluck
      */
     public function __invoke(string $key, string $value): array
     {
-        $array   = $this->items;
+        $array = $this->items;
         $results = [];
 
         foreach ($array as $item) {
             $itemValue = $item[$value];
-            $itemKey   = $item[$key];
+            $itemKey = $item[$key];
 
             if (! isset($results[$itemKey])) {
                 $results[$itemKey] = $itemValue;

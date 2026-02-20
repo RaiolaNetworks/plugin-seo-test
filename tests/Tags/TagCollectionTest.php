@@ -60,7 +60,7 @@ class TagCollectionTest extends TestCase
 
         // Assert
         $this->assertEquals([
-            'twitter:url'   => 'https://image.url/',
+            'twitter:url' => 'https://image.url/',
             'twitter:image' => [
                 'https://image.url/here-1.jpg',
                 'https://image.url/here-2.jpg',

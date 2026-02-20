@@ -13,7 +13,7 @@ class AssertionsTest extends TestCase
     public function test_should_pass_assertions(): void
     {
         // Arrange
-        $page = file_get_contents(__DIR__ . '/stubs/test-case-2.html');
+        $page = file_get_contents(__DIR__.'/stubs/test-case-2.html');
 
         // Act
         $testSeo = new TestSEO($page);
@@ -44,7 +44,7 @@ class AssertionsTest extends TestCase
         $this->expectException(ExpectationFailedException::class);
 
         // Arrange
-        $page = file_get_contents(__DIR__ . '/stubs/test-case-2.html');
+        $page = file_get_contents(__DIR__.'/stubs/test-case-2.html');
 
         // Act
         $testSeo = new TestSEO($page);
@@ -56,11 +56,11 @@ class AssertionsTest extends TestCase
     public static function breakAssertionsCase2DataProvider(): array
     {
         return [
-            'Empty canonical'         => [fn (TestSEO $testSEO) => $testSEO->assertCanonicalIsEmpty()],
-            'Wrong canonical'         => [fn (TestSEO $testSEO) => $testSEO->assertCanonicalIs('https://testpage.com/en/product/44?asd=1')],
-            'Empty Pagination'        => [fn (TestSEO $testSEO) => $testSEO->assertPaginationIsEmpty()],
-            'Empty Robots'            => [fn (TestSEO $testSEO) => $testSEO->assertRobotsIsEmpty()],
-            'Wrong Title'             => [fn (TestSEO $testSEO) => $testSEO->assertTitleIs('This is my test title')],
+            'Empty canonical' => [fn (TestSEO $testSEO) => $testSEO->assertCanonicalIsEmpty()],
+            'Wrong canonical' => [fn (TestSEO $testSEO) => $testSEO->assertCanonicalIs('https://testpage.com/en/product/44?asd=1')],
+            'Empty Pagination' => [fn (TestSEO $testSEO) => $testSEO->assertPaginationIsEmpty()],
+            'Empty Robots' => [fn (TestSEO $testSEO) => $testSEO->assertRobotsIsEmpty()],
+            'Wrong Title' => [fn (TestSEO $testSEO) => $testSEO->assertTitleIs('This is my test title')],
             'Empty AlternateHreflang' => [fn (TestSEO $testSEO) => $testSEO->assertAlternateHrefLangIsEmpty()],
         ];
     }
@@ -68,7 +68,7 @@ class AssertionsTest extends TestCase
     public function test_should_pass_assertions_on_empty_case_3(): void
     {
         // Arrange
-        $page = file_get_contents(__DIR__ . '/stubs/test-case-3.html');
+        $page = file_get_contents(__DIR__.'/stubs/test-case-3.html');
 
         // Act
         $testSeo = new TestSEO($page);
@@ -89,7 +89,7 @@ class AssertionsTest extends TestCase
         $this->expectException(ExpectationFailedException::class);
 
         // Arrange
-        $page = file_get_contents(__DIR__ . '/stubs/test-case-3.html');
+        $page = file_get_contents(__DIR__.'/stubs/test-case-3.html');
 
         // Act
         $testSeo = new TestSEO($page);
@@ -101,7 +101,7 @@ class AssertionsTest extends TestCase
     public static function breakAssertionsCase3DataProvider(): array
     {
         return [
-            'More than one h1'       => [fn (TestSEO $testSEO) => $testSEO->assertThereIsOnlyOneH1()],
+            'More than one h1' => [fn (TestSEO $testSEO) => $testSEO->assertThereIsOnlyOneH1()],
             'Has images with no alt' => [fn (TestSEO $testSEO) => $testSEO->assertAllImagesHaveAltText()],
         ];
     }

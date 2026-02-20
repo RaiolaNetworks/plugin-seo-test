@@ -18,7 +18,7 @@ class TagCollection
     public function get(string $property)
     {
         // Normalize property
-        $property = $this->prefix . ltrim($property, $this->prefix);
+        $property = $this->prefix.ltrim($property, $this->prefix);
 
         return $this->metadata[$property] ?? null;
     }
