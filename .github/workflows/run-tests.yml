@@ -14,8 +14,12 @@ jobs:
       matrix:
         os: [ubuntu-latest]
         php: [8.2, 8.3, 8.4]
-        phpunit: [10.*, 11.*]
+        phpunit: [10.*, 11.*, 12.*]
         stability: [prefer-lowest, prefer-stable]
+        exclude:
+          # PHPUnit 12 requires PHP 8.3+
+          - php: 8.2
+            phpunit: 12.*
 
     name: P${{ matrix.php }} - PHPUnit ${{ matrix.phpunit }} - ${{ matrix.stability }} - ${{ matrix.os }}
 

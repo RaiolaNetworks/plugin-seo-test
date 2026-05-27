@@ -27,13 +27,13 @@ class Robots implements JsonSerializable, Stringable
 
     public const NO_SNIPPET = 'nosnippet';
 
-    /** @var array<Robots::*> */
+    /** @var array<int, string> */
     private array $parameters;
 
     public function __construct(
         string $content
     ) {
-        /** @var array<Robots::*> */
+        /** @var list<string> $parameters */
         $parameters = array_map(
             'trim',
             explode(',', $content)
