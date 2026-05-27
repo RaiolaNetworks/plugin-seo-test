@@ -11,9 +11,9 @@ Test meta tags, titles, canonical URLs, Open Graph, Twitter Cards, robots direct
 
 ## Requirements
 
-- PHP 8.2+
-- Laravel 11 or 12
-- PHPUnit 10 or 11
+- PHP 8.2+ (8.3+ required when used with Laravel 13)
+- Laravel 11, 12, or 13
+- PHPUnit 10, 11, or 12
 
 ## Table of Contents
 
